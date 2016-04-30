@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 public class ConfigureBDayWidgetActivity extends AppCompatActivity {
+    private final String TAG="ConfigureBDayWidgetActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

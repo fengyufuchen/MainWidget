@@ -11,6 +11,7 @@ import android.os.Bundle;
  */
 public class BDayWidgetProvider extends AppWidgetProvider {
     private final String Tag="BDayWidgetProvider";
+    private String name;
 
 
     @Override
