@@ -26,11 +26,12 @@ public class BDayWidgetProvider extends AppWidgetProvider {
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         super.onUpdate(context, appWidgetManager, appWidgetIds);
+        System.out.println("onUpdate(Context context, AppWidgetManager appWid");
 
-        final  int n=appWidgetIds.length;
-        for(int i=0;i<n;i++){
-            int appWidgetId=appWidgetIds[i];
-            updateAppWidget(context,appWidgetManager,appWidgetId);
+        final int n = appWidgetIds.length;
+        for (int i = 0; i < n; i++) {
+            int appWidgetId = appWidgetIds[i];
+            updateAppWidget(context, appWidgetManager, appWidgetId);
 
         }
 
@@ -38,8 +39,8 @@ public class BDayWidgetProvider extends AppWidgetProvider {
 
     private void updateAppWidget(Context context, AppWidgetManager appWidgetManager, int appWidgetId) {
 
-        BDayWidgetModel model=BDayWidgetModel.retriveModel(context,appWidgetId);
-        if(model==null)return;
+        BDayWidgetModel model = BDayWidgetModel.retriveModel(context, appWidgetId);
+        if (model == null) return;
 
     }
 
@@ -50,10 +51,11 @@ public class BDayWidgetProvider extends AppWidgetProvider {
 
     @Override
     public void onDeleted(Context context, int[] appWidgetIds) {
+        System.out.println("onDeleted(Context context, int[] appWidgetIds");
         super.onDeleted(context, appWidgetIds);
-        final int n=appWidgetIds.length;
-        for(int i=0;i<n;i++){
-            BDayWidgetModel model=BDayWidgetModel.retriveModel(context,appWidgetIds[i]);
+        final int n = appWidgetIds.length;
+        for (int i = 0; i < n; i++) {
+            BDayWidgetModel model = BDayWidgetModel.retriveModel(context, appWidgetIds[i]);
             model.removePrefs(context);
         }
 
@@ -61,6 +63,7 @@ public class BDayWidgetProvider extends AppWidgetProvider {
 
     @Override
     public void onEnabled(Context context) {
+        System.out.println(" onEnabled(Context context)");
         super.onEnabled(context);
         BDayWidgetModel.clearAllPreferences(context);
         PackageManager pm = context.getPackageManager();
@@ -72,6 +75,7 @@ public class BDayWidgetProvider extends AppWidgetProvider {
 
     @Override
     public void onDisabled(Context context) {
+        System.out.println(" onDisabled(Context context)");
         super.onDisabled(context);
         BDayWidgetModel.clearAllPreferences(context);
         PackageManager pm = context.getPackageManager();

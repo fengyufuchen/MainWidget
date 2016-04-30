@@ -22,7 +22,7 @@ public class ConfigureBDayWidgetActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.widgetlayout);
+        setContentView(R.layout.activity_configure_bday_widget);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -49,6 +49,7 @@ public class ConfigureBDayWidgetActivity extends AppCompatActivity {
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                parentButtonClicked(v);
 
             }
         });
@@ -58,7 +59,7 @@ public class ConfigureBDayWidgetActivity extends AppCompatActivity {
     private void parentButtonClicked(View view) {
         String name = getName();
         String date = getDate();
-        if (Utils.validateDate(date)) {
+        if (!Utils.validateDate(date)) {
             this.setDate("wrong date:" + date);
             return;
         }
@@ -83,6 +84,7 @@ public class ConfigureBDayWidgetActivity extends AppCompatActivity {
     private String getDate() {
         EditText dateText = (EditText) this.findViewById(R.id.et_date);
         String dateString = dateText.getText().toString();
+        System.out.println("dateString"+dateString);
         return dateString;
 
     }
@@ -90,7 +92,7 @@ public class ConfigureBDayWidgetActivity extends AppCompatActivity {
     private void setDate(String errorDate) {
 
         EditText dateText = (EditText) this.findViewById(R.id.et_date);
-        dateText.setText("error");
+        dateText.setText(errorDate);
 
         dateText.requestFocus();
 
@@ -104,10 +106,10 @@ public class ConfigureBDayWidgetActivity extends AppCompatActivity {
     }
 
     private static void updateAppWidget(Context context, AppWidgetManager appWidgetManager, BDayWidgetModel widgetModel) {
-        RemoteViews remoteViews = new RemoteViews(context.getPackageName(),R.layout.widget_body_layout);
-        remoteViews.setTextViewText(R.id.bdw_text1,widgetModel.getName()+":"+widgetModel.iid);
-        remoteViews.setTextViewText(R.id.tv_remain_date,widgetModel.getBday());
-        remoteViews.setTextViewText(R.id.tv_date,Long.toString(widgetModel.howManyDays()));
+        RemoteViews remoteViews = new RemoteViews(context.getPackageName(),R.layout.widget_show_view_layout);
+        remoteViews.setTextViewText(R.id.tv_name,widgetModel.getName()+":"+widgetModel.iid);
+        remoteViews.setTextViewText(R.id.tv_date,widgetModel.getBday());
+        remoteViews.setTextViewText(R.id.tv_remain_date,Long.toString(widgetModel.howManyDays()));
 
 
         Intent defineIntent=new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.baidu.com"));

@@ -20,12 +20,19 @@
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/appwidget_provider"></meta-data>
+            <intent-filter >
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"></action>
+            </intent-filter>
         </receiver>
-
         <activity
             android:name=".ConfigureBDayWidgetActivity"
             android:label="@string/title_activity_configure_bday_widget"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+
+        </activity>
     </application>
 
 </manifest>
