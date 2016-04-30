@@ -5,7 +5,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/tc_name"
+        android:id="@+id/tv_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="30sp"
@@ -20,7 +20,7 @@
 
 
         <TextView
-            android:id="@+id/tv_w_date"
+            android:id="@+id/tv_remain_date"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -28,8 +28,8 @@
             android:background="@drawable/box1"
             android:text="0"
             android:textSize="30sp" />
-        <TextView
-            android:id="@+id/tv_buy"
+        <Button
+            android:id="@+id/btn_for_buy"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -38,7 +38,8 @@
             android:textSize="30sp" />
     </LinearLayout>
 
-    <Button
+    <TextView
+        android:id="@+id/tv_date"
         android:background="@drawable/box1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

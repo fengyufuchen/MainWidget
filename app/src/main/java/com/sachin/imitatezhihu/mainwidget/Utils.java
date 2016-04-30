@@ -42,7 +42,11 @@ public class Utils {
 
     }
 
-    boolean validateDate(String dateString){
+    /**
+     * @param dateString
+     * @return
+     */
+  public   static boolean validateDate(String dateString){
         SimpleDateFormat format=new SimpleDateFormat("MM/dd/yyyy");
         format.setLenient(false);
         Date date=null;

@@ -12,9 +12,19 @@ public class BDayWidgetModel extends APrefWidgetModel{
 
     private String tag="BDayWidgetModel";
     private static String BDAY_WIDGET_PROVIDER_NAME="com.androidbook.BDtwidget.BDayWidgetProvider";
+
+    public String getName() {
+        return name;
+    }
+
     private String name="anon";
 
     private static String F_NAME="name";
+
+    public String getBday() {
+        return bday;
+    }
+
     private String bday="1/1/2001";
     private static  String F_BDAY="bday";
 
@@ -42,6 +52,9 @@ public class BDayWidgetModel extends APrefWidgetModel{
     public void setBday(String inBday){
         this.bday=inBday;
     }
+
+
+
 
     public long howManyDays(){
        return Utils.howFraINDays(Utils.getDate(this.bday));
