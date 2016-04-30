@@ -40,7 +40,7 @@ public abstract class APrefWidgetModel implements IWidgetModelSaveContract {
         return null;
     }
 
-    private String getStoreKeyForFieldName(String filedName) {
+    String getStoreKeyForFieldName(String filedName) {
         return filedName + "_" + iid;
 
     }
