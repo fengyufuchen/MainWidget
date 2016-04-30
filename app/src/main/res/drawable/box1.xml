@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <stroke
+        android:width="4dp"
+        android:color="#802525"></stroke>
+    <padding
+        android:boottom="4dp"
+        android:left="4dp"
+        android:right="2dp"
+        android:top="2dp">
+
+    </padding>
+    <corners android:radius="4dp"></corners>
+</shape>
+<!--shape形状，stroke属性表示shape的描边，其中width表示描边的宽度；padding表示view的空白-->

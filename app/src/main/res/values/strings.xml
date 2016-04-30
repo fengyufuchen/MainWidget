@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MainWidget</string>
+    <string name="title_activity_configure_bday_widget">ConfigureBDayWidgetActivity</string>
+</resources>
